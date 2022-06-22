@@ -4,20 +4,6 @@ $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const idRegion = urlParams.get('region');
     let url= "https://pokeapi.co/api/v2/region/"+idRegion;
-    $.ajax(
-        {
-            method:"GET",
-            "url" : "https://pokeapi.co/api/v2/region",
-            datatype: "json",
-            crossDomain: true,
-        }
-    ).done(function (data){
-        let region = data.results[idRegion-1].name;
-        $("#labelRegion").text("Región "+region);
-    }).fail(function (err){
-        alert("Ha ocurrido un error al cargar la página");
-    });
-
 
     $.ajax(
         {
@@ -29,6 +15,7 @@ $(document).ready(function () {
     ).done(function (data){
         var pagina = 1;
         var cantidad = 10;
+        $("#labelRegion").text("Región "+data.name);
         let listaLocaciones = data.locations.slice((pagina-1)*cantidad,(pagina)*cantidad);
         let paginas= Math.ceil(data.locations.length/cantidad);
         let paginadohtml="<li class='page-item disabled'><button class='page-link' id='previous' >Previous</button></li>";
