@@ -90,7 +90,7 @@ $(document).ready(function () {
                 contenthtml+= "<td>"+(i+1+(cantidad*(pagina-1)))+"</td>";
                 contenthtml+= "<td>"+locacion.name+"</td>";
                 let corte= locacion.url.split("/");
-                contenthtml+= "<td><a href='../detalleLocacion/detalleLocacion.html?locacion="+ corte[6] +"' class='btn btn-primary'>Detalle</a></td>";
+                contenthtml+= "<td><a href='../detalleLocacion/detalleLocacion.html?locacion="+ corte[6] +"' class='btn btn-primary'>Detalles</a></td>";
                 contenthtml+= "</tr>";
             });
             $("#tablaLocaciones").html(contenthtml);
