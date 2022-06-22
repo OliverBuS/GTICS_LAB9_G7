@@ -87,7 +87,7 @@ $(document).ready(function () {
             contenthtml = "";
             $.each(listaLocaciones, function (i, locacion){
                 contenthtml+= "<tr>";
-                contenthtml+= "<td>"+(i+1)+"</td>";
+                contenthtml+= "<td>"+(i+1+(cantidad*(pagina-1)))+"</td>";
                 contenthtml+= "<td>"+locacion.name+"</td>";
                 let corte= locacion.url.split("/");
                 contenthtml+= "<td><a href='../detalleLocacion/detalleLocacion.html?locacion="+ corte[6] +"' class='btn btn-primary'>Detalle</a></td>";
